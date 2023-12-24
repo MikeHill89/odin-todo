@@ -1,67 +1,86 @@
-class Todo {
+export class Todo {
     static todos = [];
-    constructor(title, description, dueDate, priority, notes = '', checklist = []) {
-        this.id = Todo.generateId();
+    static nextId = 1;
+    static getTodoById(id) {
+        return Todo.todos.find(todo => todo.id === id);
+    }
+    static viewAll() {
+        Todo.todos.forEach(todo => {
+            console.log(`Todo ID: ${todo.id}`);
+            for (const prop in todo) {
+                if (todo.hasOwnProperty(prop)) {
+                    console.log(`${prop}: ${todo[prop]}`);
+                }
+            }
+            console.log('---'); // Add a separator for better readability
+        });
+    }
+    static searchTodo() {
+        const id = prompt('Enter the ID of the todo:');
+        const parsedId = parseInt(id, 10);
+        if (isNaN(parsedId)) {
+            console.log('Invalid ID. Please enter a valid number.');
+            return null;
+        }
+        const foundTodo = Todo.todos.find(todo => todo.id === parsedId);
+        if (foundTodo) {
+            console.log('Found Todo:');
+
+            console.log(`Title: ${foundTodo.title} | ID: ${foundTodo.id}`);
+        } else {
+            console.log(`Todo with ID ${parsedId} not found.`);
+            return null;
+        }
+    }
+    constructor(relatedProject, title, description, dueDate, prio, notes = '') {
+        this.id = Todo.generateUniqueID()
         this.title = title;
+        this.relatedProject = relatedProject;
         this.description = description;
         this.dueDate = dueDate;
-        this.priority = priority;
+        this.prio = prio;
         this.notes = notes;
-        this.checklist = checklist.map(item => ({ text: item, completed: false }));
         this.completed = false;
         Todo.todos.push(this);
+
+    }
+    static generateUniqueID() {
+        const uniqueId = Todo.nextId++;
+        return uniqueId;
     }
     complete() {
         this.completed = true;
-        // Mark all checklist items as completed
-        this.checklist.forEach(item => {
-            item.completed = true;
-        });
     }
-
-    completeCheckListItem(index) {
-        if (index >= 0 && index < this.checklist.length) {
-            this.checklist[index].completed = true;
+    setTitle(title) {
+        this.title = title;
+    }
+    setDescription(description) {
+        this.description = description;
+    }
+    setDueDate(dueDate) {
+        this.dueDate = dueDate;
+    }
+    setPrio(prio) {
+        this.prio = prio;
+    }
+    setNotes(notes) {
+        this.notes = notes;
+    }
+    view() {
+        for (const prop in this) {
+            if (this.hasOwnProperty(prop)) {
+                console.log(`${prop}: ${this[prop]}`);
+            }
         }
     }
-
-    function() {
-    }
-    static generateId() {
-        return new Date().getTime();
-    }
-}
-
-function createCheckList() {
-    const checklist = [];
-    let addChecklistItem = true;
-
-    while (addChecklistItem) {
-        const checklistItem = prompt('Enter a checklist item (press Enter to finish):');
-        if (checklistItem.trim() !== '') {
-            checklist.push({ text: checklistItem, completed: false });
+    delete() {
+        const index = Todo.todos.indexOf(this);
+        if (index !== -1) {
+            Todo.todos.splice(index, 1);
+            console.log(`Todo with ID ${this.id} has been deleted.`);
         } else {
-            addChecklistItem = false;
+            console.log(`Todo with ID ${this.id} not found.`);
         }
     }
-
-    return checklist;
 }
 
-function createNewTudo(todo){
-    const title = prompt("Enter the title:");
-    const description = prompt("Enter the description:");
-    const dueDate = prompt("Enter due date (YYYY-MM-DD):");
-    const priority = prompt("Enter the priority:");
-    const notes = prompt("Enter any additional notes:");
-    const checklist = createCheckList();
-    todo =  new Todo(title,description,dueDate,priority,notes, checklist);
-
-    return todo
-}
-function showAllTodos(){
-    return Todo.todos;
-}
-window.showAllTodos = showAllTodos;
-
-export {Todo, createNewTudo, showAllTodos};
