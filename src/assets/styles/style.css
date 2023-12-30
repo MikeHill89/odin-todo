@@ -4,3 +4,44 @@ html, body{
     background-color: blue;
     margin: 0;
 }
+.wrapper{
+    display: grid;
+    grid-template-rows: 1fr 5fr;
+    grid-template-areas: 
+    "nav"
+    "main"
+    ;
+    height: 100vh;
+}
+
+nav{
+    background-color: white;
+    grid-area: nav;
+    display: flex;
+    gap:1rem;
+    padding: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+nav ul{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    list-style: none;
+    border:0;
+    padding:0;
+    gap: 1rem;
+}
+nav ul li a{
+    text-decoration: none;
+}
+main{
+    grid-area: main;
+    display: flex;
+    height: auto;
+    gap:1rem;
+    padding:1rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
