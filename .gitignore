@@ -6,4 +6,4 @@ __tests__/
 test/
 tests/
 .babelrc
-.jest.config.js
+jest.config.js
