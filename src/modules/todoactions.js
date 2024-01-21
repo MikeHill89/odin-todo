@@ -5,11 +5,11 @@ export function completeTodo(todo) {
     return todo.completed = !todo.completed;
 }
 
-export function changeTitle(todo, title) {
-    if (title === null) {
+export function changeTitle(todo, newTitle) {
+    if (newTitle === null) {
         return alert('Title cannot be empty');
     } else {
-        todo.title = title;
+        todo.title = newTitle;
     }
 }
 
@@ -37,15 +37,15 @@ export function changeNotes(todo, notes) {
     todo.notes = notes;
 }
 
-export function addItemToChecklist(todo, description) {
-    if (todo.checklist instanceof Checklist) {
-        todo.checklist.addItem(description);
+export function addItemToChecklist(list, newItem) {
+    if (list instanceof Checklist) {
+        list.addItem(newItem);
     }
 }
 
-export function removeItemFromChecklist(todo, index) {
-    if (todo.checklist instanceof Checklist) {
-        todo.checklist.removeItem(index);
+export function removeItemFromChecklist(list, index) {
+    if (list.checklist instanceof Checklist) {
+        list.checklist.removeItem(index);
     }
 }
 

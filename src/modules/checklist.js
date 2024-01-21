@@ -1,6 +1,6 @@
 export default class Checklist {
-    constructor() {
-        this.items = [];
+    constructor(items = []) {
+        this.items = items.map(item => ({ description: item, checked:false})); ;
     }
 
     addItem(description) {

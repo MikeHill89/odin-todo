@@ -1,1 +1,9 @@
 node_modules/
+# Ignore test files and directories
+__tests__/
+*.test.js
+*.spec.js
+test/
+tests/
+.babelrc
+.jest.config.js
