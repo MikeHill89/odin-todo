@@ -1,6 +1,6 @@
-import Checklist from "./checklist";
-import Project from "./project";
-import * as todoActions from './todoactions';
+import Checklist from "./checklist.js";
+import Project from "./project.js";
+import * as todoActions from './todoactions.js';
 
 export default class createTodo {
     static todoList = [];
@@ -14,6 +14,10 @@ export default class createTodo {
         const existingProjectIndex = Project.projectNames.indexOf(project);
         this.project = (existingProjectIndex !== -1) ? project : Project.createProjectName(project);
         this.completed = false; 
+        createTodo.addToTodolist(this);
+    }
+    static addToTodolist(todo){
+        createTodo.todoList.push(todo);
     }
 
     changeTodoCompletion(){

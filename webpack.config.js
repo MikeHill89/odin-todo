@@ -12,27 +12,28 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.css$/,
-                use: ["style-loader", "css-loader"],
+                test: /\.css$/i,
+                include: path.resolve(__dirname, 'src'),
+                use: ['style-loader', 'css-loader', 'postcss-loader'],
             },
             {
                 test: /\.(woff|woff2|eot|ttf|otf)$/i,
                 type: 'asset/resource',
                 generator: {
-                    filename: 'fonts/[name][ext]',  
+                    filename: 'fonts/[name][ext]',
                 },
             },
             {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
-                use: [
-                    {
-                        loader: 'file-loader',
-                        options: {
-                            name: 'images/[name].[ext]',
-                        },
+                type: 'asset/resource',
+                generator: {
+                    filename: 'images/[name][ext]',
                     },
-                ],
-            },
+                },
+            {
+                test: /\.html$/,
+                use: 'html-loader',
+                },
         ],
     },
     plugins: [

@@ -1,25 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html data-theme="cupcake" lang="en">
 
 <head>
-    <title>TODO or Not Todo</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="./assets/styles/style.css" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Webpack App</title>
 </head>
 
 <body>
-    <div class="wrapper">
-        <nav>
-            <ul>
-                <li id="addTodo"><a href="#">New Todo</a></li>
-              <li id ="viewUncategorized"><a href="#">Uncategorized</a></li>
-                <li id="viewAll"><a href="#">All Projects</a></li>
-            </ul>
-        </nav>
-            <main id="main">
-                <h1>Todo or Not Todo</h1>
-            </main>
+    <div id="app">
+        <div class="navbar p-4 bg-base-100">
+            <div class="flex-1">
+                <a class="btn btn-ghost text-xl">Todowow</a>
+            </div>
+            <div class="flex-none gap-4">
+                <div class="drawer">
+                    <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+                    <div class="drawer-content">
+                        <label for="my-drawer" class="btn btn-primary
+                                drawer-button">Add +</label>
+                    </div>
+                    <div class="drawer-side">
+                        <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
+                        <ul class="menu gap-4 p-4 w-80 min-h-full bg-base-200 text-base-content">
+                            <li class="font-extrabold">Hi, Maikel!</li>
+                            <li class="font-bold">+ Add New Todo</li>
+                            <li>Search</li>
+                            <li>Today</li>
+                            <li>Upcoming</li>
+                            <h2 class="font-extrabold">Projects</h3>
+                                <li class="font-bold">+ Add New Project</li>
+                                <li>Today</li>
+                                <li>Upcoming</li>
+                        </ul>
+                    </div>
+                </div>
+                <input type="checkbox" value="dark" class="toggle theme-controller" />
+            </div>
+        </div>
+
+        <div class="hero min-h-screen bg-base-200">
+            <div class="hero-content text-center">
+                <div class="max-w-md">
+                    <h1 class="text-5xl font-bold">No Todo's Found!</h1>
+                    <p class="py-6">Start making your first todo today! Click
+                        the button below to Get Started!</p>
+                    <!-- You can open the modal using ID.showModal() method -->
+                    <button class="btn btn-primary" onclick="my_modal_3.showModal()">Get Started!</button>
+                    <dialog id="my_modal_3" class="modal">
+                        <div class="modal-box">
+                            <form method="dialog">
+                                <button class="btn btn-sm btn-circle btn-primary absolute right-2 top-2">✕</button>
+                            </form>
+                            <h3 class="font-bold text-lg">Hello!</h3>
+                            <p class="py-4">Press ESC key or click on ✕ button to close</p>
+                        </div>
+                    </dialog>
+                </div>
+            </div>
+        </div>
+        <footer class="footer footer-center p-4 bg-base-300 text-base-content">
+            <aside>
+                <p>Copyright © 2024 - All right reserved by ACME Industries Ltd</p>
+            </aside>
+        </footer>
     </div>
 </body>
 
