@@ -14,7 +14,18 @@ module.exports = {
             {
                 test: /\.css$/i,
                 include: path.resolve(__dirname, 'src'),
-                use: ['style-loader', 'css-loader', 'postcss-loader'],
+                use: ['style-loader', 'css-loader', 
+                    {loader: 'postcss-loader',
+                    options: {
+                        postcssOptions: {
+                            plugins: [
+                                require('tailwindcss'),
+                                require('autoprefixer'),
+                                ],
+                            },
+                        },
+                    },
+                    ],
             },
             {
                 test: /\.(woff|woff2|eot|ttf|otf)$/i,

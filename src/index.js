@@ -1,4 +1,5 @@
 import './style.css';
+import './output.css';
 import createTodo from './modules/createTodo.mjs';
 import htmlModules from './modules/domHandler';
 
@@ -25,3 +26,6 @@ const showAllTodos = () =>  {
     console.log(createTodo.todoList)
 };
 
+const app = document.getElementById("app");
+
+app.innerHTML = htmlModules.nav;
