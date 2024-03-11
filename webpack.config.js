@@ -49,6 +49,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
+            title: 'Hello',
             template: './src/index.html',
             filename: 'index.html',
         }),

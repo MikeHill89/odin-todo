@@ -1,5 +1,5 @@
-import './style.css';
-import './output.css';
+import './css/style.css';
+import './css/output.css';
 import createTodo from './modules/createTodo.mjs';
 import htmlModules from './modules/domHandler';
 
@@ -28,4 +28,4 @@ const showAllTodos = () =>  {
 
 const app = document.getElementById("app");
 
-app.innerHTML = htmlModules.nav;
+app.innerHTML = htmlModules.nav + htmlModules.main + htmlModules.footer;
