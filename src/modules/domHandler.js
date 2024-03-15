@@ -1,10 +1,6 @@
-import navContent from '../components/nav.html';
-import footerContent from '../components/footer.html';
-import mainContent from '../components/main.html';
-const htmlModules = {
-    nav: navContent,
-    main: mainContent,
-    footer: footerContent,
-};
+import htmlModules from './initializePage';
+export function renderAddTodo(){
+    const modal = document.querySelector(".modal-box");
+    modal.innerHTML = htmlModules.todo;  
+}
 
-export default htmlModules;

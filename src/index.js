@@ -1,7 +1,8 @@
 import './css/style.css';
 import './css/output.css';
 import createTodo from './modules/createTodo.mjs';
-import htmlModules from './modules/domHandler';
+import htmlModules from './modules/initializePage';
+import {renderAddTodo} from './modules/domHandler.js';
 
 const todo = new createTodo(
     'Test Title',
@@ -29,3 +30,6 @@ const showAllTodos = () =>  {
 const app = document.getElementById("app");
 
 app.innerHTML = htmlModules.nav + htmlModules.main + htmlModules.footer;
+
+const addTodoBtn = document.querySelector(".addTodoBtn");
+addTodoBtn.addEventListener("click",renderAddTodo);
