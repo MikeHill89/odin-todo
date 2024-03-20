@@ -1,13 +1,19 @@
-<form id="submit-todo-form" class="flex flex-col gap-5" method="dialog">
-      <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
-      <h3 class="font-bold text-lg">Todo details</h3>
-      <label class="input input-bordered flex items-center gap-2">Title
-          <input type="text" class="grow" placeholder="Daisy" />
-      </label>
-      <textarea class="textarea textarea-bordered h-24" placeholder="Description"></textarea>
-      <label for="start">Start date:</label>
-      <input class="input input-bordered grow" type="date" id="start" name="trip-start" value="2024-07-22" min="2024-01-01" max="2099-12-31" />
-      <p class="py-4">Press ESC key or click on ✕ button to cancel</p>
-</form>
-<button class="btn btn-success" type="" form="submit-todo-form">Save todo</button>
+<dialog id="model_addTodo" class="modal">
+    <div class="modal-box">
+        <form id="submit-todo-form" class="flex flex-col gap-5" method="dialog">
+            <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+            <h3 class="font-bold text-lg">Todo details</h3>
+            <label class="input input-bordered flex items-center gap-2">Title
+                <input type="text" class="grow" placeholder="Daisy" />
+            </label>
+            <textarea class="textarea textarea-bordered h-24" placeholder="Description"></textarea>
+            <label for="start">Start date:</label>
+            <input class="input input-bordered grow" type="date" id="start" name="trip-start" value="2024-07-22"
+                min="2024-01-01" max="2099-12-31" />
+            <p class="py-4">Press ESC key or click on ✕ button to cancel</p>
+        </form>
+        <button class="btn btn-success" type="" form="submit-todo-form">Save todo</button>
+
+    </div>
+</dialog>
 

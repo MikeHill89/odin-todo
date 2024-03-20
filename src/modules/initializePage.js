@@ -6,7 +6,7 @@ const htmlModules = {
     nav: navContent,
     main: mainContent,
     footer: footerContent,
-    todo: todoModal,
+    modalTodo: todoModal,
 };
 
 export default htmlModules;
