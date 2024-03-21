@@ -4,12 +4,11 @@ import * as todoActions from './todoactions.js';
 
 export default class createTodo {
     static todoList = [];
-    constructor(title, description, dueDate, priority, notes, checklistItems, project){
+    constructor(title, description, dueDate, priority, checklistItems, project){
         this.title = title;
         this.description = description;
         this.dueDate = dueDate;
         this.priority = priority;
-        this.notes = notes;
         this.checklist = new Checklist(checklistItems);
         const existingProjectIndex = Project.projectNames.indexOf(project);
         this.project = (existingProjectIndex !== -1) ? project : Project.createProjectName(project);
@@ -40,9 +39,6 @@ export default class createTodo {
         todoActions.changePriority(this, newPriority);
     }
 
-    changeTodoNotes(newNotes){
-        todoActions.changeNotes(this, newNotes);
-    }
     addItemToCheckList(newItem){
         todoActions.addItemToChecklist(this.checklist, newItem);
     }

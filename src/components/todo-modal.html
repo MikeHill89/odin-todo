@@ -1,19 +1,26 @@
 <dialog id="model_addTodo" class="modal">
     <div class="modal-box">
-        <form id="submit-todo-form" class="flex flex-col gap-5" method="dialog">
+        <form id="submit-todo-form" class="flex flex-col gap-2" method="dialog">
             <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
             <h3 class="font-bold text-lg">Todo details</h3>
-            <label class="input input-bordered flex items-center gap-2">Title
-                <input type="text" class="grow" placeholder="Daisy" />
-            </label>
-            <textarea class="textarea textarea-bordered h-24" placeholder="Description"></textarea>
-            <label for="start">Start date:</label>
-            <input class="input input-bordered grow" type="date" id="start" name="trip-start" value="2024-07-22"
-                min="2024-01-01" max="2099-12-31" />
-            <p class="py-4">Press ESC key or click on ✕ button to cancel</p>
+            <label class="text-xs" for="todo-title">Title</label>
+            <input type="text" id="todo-title" class="grow input input-bordered input-xs" placeholder="Daisy" />
+            <label class="text-xs" for="todo-description">Description</label>
+            <textarea id="todo-description" class="text-xs textarea textarea-bordered h-22"
+                placeholder="Description"></textarea>
+            <label class="text-xs" for="todo-priority">Priority</label>
+            <select id="todo-priority" class="select select-info select-xs text-xs select-bordered ">
+                <option>Low</option>
+                <option selected>Medium</option>
+                <option>High</option>
+            </select>
+            <label class="text-xs" for="todo-duedate">Due date</label>
+            <input placeholder="Due date" class="input input-xs input-bordered
+                                          grow" type="date" id="todo-duedate" value="" min="2024-01-01" max="2099-12-31" />
         </form>
-        <button class="btn btn-success" type="" form="submit-todo-form">Save todo</button>
+        <button id="submit-todo" class="mt-5 btn-xs btn btn-success" type="" form="submit-todo-form">Save todo</button>
 
+        <p class="text-xs py-4">Press ESC key or click on ✕ button to cancel</p>
     </div>
 </dialog>
 

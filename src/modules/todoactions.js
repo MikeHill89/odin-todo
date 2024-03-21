@@ -33,10 +33,6 @@ export function changePriority(todo, priority) {
     }
 }
 
-export function changeNotes(todo, notes) {
-    todo.notes = notes;
-}
-
 export function addItemToChecklist(list, newItem) {
     if (list instanceof Checklist) {
         list.addItem(newItem);
