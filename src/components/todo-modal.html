@@ -16,10 +16,13 @@
             </select>
             <label class="text-xs" for="todo-duedate">Due date</label>
             <input placeholder="Due date" class="input input-xs input-bordered
-                                          grow" type="date" id="todo-duedate" value="" min="2024-01-01" max="2099-12-31" />
+                                          grow" type="date" id="todo-duedate" value="" min="2024-01-01"
+                max="2099-12-31" />
         </form>
-        <button id="submit-todo" class="mt-5 btn-xs btn btn-success" type="" form="submit-todo-form">Save todo</button>
-
+        <div class="todo-btn-options grid grid-cols-4 gap-4">
+            <button id="submit-todo" class="col-start-1 mt-5 btn-xs btn btn-success" type="" form="submit-todo-form">Save
+                todo</button>
+        </div>
         <p class="text-xs py-4">Press ESC key or click on ✕ button to cancel</p>
     </div>
 </dialog>
