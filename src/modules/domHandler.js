@@ -7,11 +7,7 @@ export function renderAddTodo() {
 }
 
 export function renderAllTodos() {
-    const view = document.querySelector(".hero");
-    view.classList.add("flex");
-    view.classList.add("p-5");
-    view.classList.add("gap-5");
-    view.classList.add("justify-center");
+    const view = document.querySelector(".hero-content");
     view.innerHTML = "";
     createTodo.todoList.forEach(todo => {
         const card = document.createElement("div");

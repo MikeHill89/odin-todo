@@ -4,12 +4,14 @@
             <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
             <h3 class="font-bold text-lg">Todo details</h3>
             <label class="text-xs" for="todo-title">Title</label>
-            <input type="text" id="todo-title" class="grow input input-bordered input-xs" placeholder="Daisy" />
+            <input type="text" id="todo-title" class="grow input input-bordered
+            input-xs" placeholder="Daisy" required="" />
             <label class="text-xs" for="todo-description">Description</label>
             <textarea id="todo-description" class="text-xs textarea textarea-bordered h-22"
-                placeholder="Description"></textarea>
+                placeholder="Description" required=""></textarea>
             <label class="text-xs" for="todo-priority">Priority</label>
-            <select id="todo-priority" class="select select-info select-xs text-xs select-bordered ">
+            <select id="todo-priority" class="select select-info select-xs
+                text-xs select-bordered " required="">
                 <option>Low</option>
                 <option selected>Medium</option>
                 <option>High</option>
@@ -17,13 +19,14 @@
             <label class="text-xs" for="todo-duedate">Due date</label>
             <input placeholder="Due date" class="input input-xs input-bordered
                                           grow" type="date" id="todo-duedate" value="" min="2024-01-01"
-                max="2099-12-31" />
+                max="2099-12-31" required=""/>
         </form>
         <div class="todo-btn-options grid grid-cols-4 gap-4">
-            <button id="submit-todo" class="col-start-1 mt-5 btn-xs btn btn-success" type="" form="submit-todo-form">Save
+            <button id="submit-todo"  class="col-start-1 mt-5 btn-xs btn
+                btn-success" type="submit" form="submit-todo-form">Save
                 todo</button>
         </div>
         <p class="text-xs py-4">Press ESC key or click on ✕ button to cancel</p>
     </div>
 </dialog>
-
+ 
